@@ -14,5 +14,10 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        stage ("Deploy") {
+            steps {
+                sh 'mvn -s settings.xml clean deploy'
+            }
+        }
     }
 }
